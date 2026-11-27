@@ -1,0 +1,290 @@
+.dashboard h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.dashboard-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.dashboard-head button {
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--brand-dark);
+  background: var(--tint);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dashboard-head button:hover {
+  background: #FFE0D2;
+}
+
+.dashboard-note {
+  margin-top: 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ===== stat cards ===== */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  background: #fff;
+  border: 1px solid rgba(120, 70, 40, 0.07);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* card ke kone ka rangeen circle */
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: -26px;
+  right: -26px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--tone, #FFE6DA);
+  opacity: 0.55;
+}
+
+.stat-card span {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.stat-card b {
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.stat-card.orange { --tone: #FFD9C8; }
+.stat-card.green { --tone: #CFEFD9; }
+.stat-card.blue { --tone: #D3E6FB; }
+.stat-card.purple { --tone: #E4DAF8; }
+.stat-card.amber { --tone: #FBE9B7; }
+.stat-card.rose { --tone: #FAD3DC; }
+
+/* ===== panels ===== */
+.dash-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.dash-panel {
+  padding: 22px 24px;
+  background: #fff;
+  border: 1px solid rgba(120, 70, 40, 0.07);
+  border-radius: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.dash-panel h4 {
+  margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ===== 7 day bar chart ===== */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 210px;
+}
+
+.bar-col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.bar-value {
+  min-height: 16px;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.bar-track {
+  flex: 1;
+  width: 100%;
+  max-width: 44px;
+  display: flex;
+  align-items: flex-end;
+  background: #FFF4EE;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  width: 100%;
+  background: linear-gradient(180deg, #FF7A45, #E8401A);
+  border-radius: 10px 10px 0 0;
+  transition: height 0.6s ease;
+}
+
+.bar-label {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===== status + top items ===== */
+.status-row,
+.top-row {
+  margin-bottom: 16px;
+}
+
+.status-row:last-child,
+.top-row:last-child {
+  margin-bottom: 0;
+}
+
+.status-row-top,
+.top-line {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: var(--ink);
+}
+
+.status-row-top b,
+.top-line b {
+  font-weight: 600;
+}
+
+.top-line b {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status-track {
+  height: 8px;
+  background: #F6ECE4;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.status-fill {
+  height: 100%;
+  border-radius: 8px;
+  background: var(--brand);
+  transition: width 0.6s ease;
+}
+
+.status-fill.s-FoodProcessing { background: #FF7A45; }
+.status-fill.s-Outfordelivery { background: #F2B400; }
+.status-fill.s-Delivered { background: #1E9B4B; }
+.status-fill.top { background: linear-gradient(90deg, #FF7A45, #E8401A); }
+
+.top-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.top-rank {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--tint);
+  border-radius: 50%;
+}
+
+.top-main {
+  flex: 1;
+}
+
+/* ===== recent orders ===== */
+.recent-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.recent-row:last-child {
+  border-bottom: none;
+}
+
+.recent-row b {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.recent-row span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.recent-right {
+  text-align: right;
+}
+
+.pill {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--brand-dark);
+  background: var(--tint);
+  border-radius: 999px;
+}
+
+.pill.s-Outfordelivery { color: #8A6100; background: #FFF4D6; }
+.pill.s-Delivered { color: #1E7A3C; background: #E7F7EC; }
+
+@media (max-width: 900px) {
+  .dash-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .bars {
+    gap: 5px;
+  }
+  .bar-value {
+    display: none;
+  }
+}

@@ -1,0 +1,113 @@
+.header {
+  position: relative;
+  height: 34vw;
+  min-height: 320px;
+  margin: 24px auto 30px;
+  border-radius: 36px;
+  overflow: hidden;
+  background-color: var(--brand-dark);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right center;
+  box-shadow: 0 30px 60px -28px rgba(179, 41, 22, 0.7);
+}
+
+/* chhoti screen par text padhne layak rahe isliye halka overlay */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(110, 18, 6, 0.55) 0%, rgba(110, 18, 6, 0) 65%);
+  opacity: 0;
+}
+
+.header-contents {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.4vw;
+  max-width: 50%;
+  bottom: 10%;
+  left: 6vw;
+  animation: fadeIn 2s;
+}
+
+.header-contents h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  font-size: max(3.9vw, 26px);
+  text-shadow: 0 4px 24px rgba(80, 10, 0, 0.35);
+}
+
+.header-contents p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: max(1vw, 14px);
+  line-height: 1.65;
+  max-width: 520px;
+}
+
+.header-contents button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  cursor: pointer;
+  color: #4A1208;
+  font-weight: 600;
+  font-size: max(1vw, 14px);
+  padding: max(0.9vw, 12px) max(2vw, 26px);
+  background: var(--sun);
+  border-radius: 999px;
+  box-shadow: 0 14px 28px -12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.header-contents button::after {
+  content: '\2192';
+  transition: transform 0.25s;
+}
+
+.header-contents button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 30px -12px rgba(0, 0, 0, 0.55);
+}
+
+.header-contents button:hover::after {
+  transform: translateX(4px);
+}
+
+@media (max-width: 1050px) {
+  .header {
+    height: 38vw;
+  }
+  .header-contents {
+    max-width: 52%;
+  }
+}
+
+@media (max-width: 750px) {
+  .header {
+    min-height: 360px;
+    border-radius: 26px;
+  }
+  /* neeche se dark gradient taaki text photo ke upar bhi saaf padhe */
+  .header::before {
+    opacity: 1;
+    background: linear-gradient(0deg, rgba(90, 12, 2, 0.9) 0%, rgba(90, 12, 2, 0.55) 40%, rgba(90, 12, 2, 0) 75%);
+  }
+  .header-contents {
+    max-width: calc(100% - 48px);
+    gap: 14px;
+    bottom: 22px;
+    left: 24px;
+  }
+  .header-contents h2 {
+    font-size: 28px;
+  }
+  .header-contents p {
+    display: none;
+  }
+}

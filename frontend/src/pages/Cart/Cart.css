@@ -1,0 +1,348 @@
+.cart {
+  margin: 60px 0 100px;
+}
+
+.cart hr {
+  height: 1px;
+  border: none;
+  background: var(--line);
+}
+
+.cart-items-title {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1fr 1fr 0.5fr;
+  align-items: center;
+  padding: 0 18px;
+  color: var(--muted);
+  font-size: max(0.85vw, 12px);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* sirf upar wala header row card jaisa */
+.cart-items > .cart-items-title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* item rows: header ki styling reset */
+.cart-items-item {
+  margin: 12px 0;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: normal;
+}
+
+.cart-items-item img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  border-radius: 14px;
+  background: #FFF3EC;
+}
+
+.cart-items-item div {
+  min-width: 38px;
+  max-width: 44px;
+  padding: 6px 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-dark);
+  background: var(--tint);
+  border: none;
+  border-radius: 10px;
+}
+
+.cart-items-remove-icon {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: var(--muted);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.cart-items-remove-icon:hover {
+  background: #FFE3DF;
+  color: #D92D20;
+}
+
+.cart-bottom {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: max(6vw, 24px);
+}
+
+.cart-total {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 28px;
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid rgba(120, 70, 40, 0.07);
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-total h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.cart-total-details {
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 0;
+  color: var(--muted);
+}
+
+.cart-total-details:last-child {
+  color: var(--ink);
+  font-size: 18px;
+}
+
+.cart-total hr {
+  margin: 10px 0;
+}
+
+.cart-total button {
+  width: 100%;
+  padding: 14px 0;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  background: var(--grad);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow: 0 14px 26px -12px rgba(255, 76, 36, 0.85);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.cart-total button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 28px -12px rgba(255, 76, 36, 0.95);
+}
+
+.cart-promocode {
+  flex: 1;
+}
+
+.cart-promocode p {
+  color: var(--muted);
+}
+
+.cart-promocode-input {
+  margin-top: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background: #FFF7F3;
+  border: 1.5px dashed #F0B9A6;
+  border-radius: 14px;
+}
+
+.cart-promocode-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 12px;
+  font-size: 15px;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.cart-promocode-input button {
+  width: auto;
+  padding: 11px 24px;
+  color: #fff;
+  background: var(--ink);
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.cart-promocode-input button:hover {
+  background: var(--brand-dark);
+}
+
+@media (max-width: 750px) {
+  .cart {
+    margin: 40px 0 70px;
+  }
+  .cart-items-title {
+    padding: 0 10px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+  .cart-items-item {
+    font-size: 13px;
+  }
+  .cart-items-item img {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+  .cart-bottom {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .cart-promocode {
+    justify-content: flex-start;
+  }
+}
+
+/* ===== promo discount row ===== */
+.cart-total-details.discount p {
+  font-weight: 600;
+  color: #1E7A3C;
+}
+
+/* ===== promo applied chip + messages ===== */
+.cart-promocode-input input {
+  text-transform: uppercase;
+}
+
+.cart-promocode-input input::placeholder {
+  text-transform: none;
+}
+
+.cart-promocode-input button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+.cart-promo-applied {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: #E7F7EC;
+  border: 1.5px dashed #9AD9AE;
+  border-radius: 14px;
+}
+
+.cart-promo-applied b {
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: #1E7A3C;
+}
+
+.cart-promo-applied span {
+  font-size: 13px;
+  color: #2E8B4F;
+}
+
+.cart-promo-applied button {
+  width: auto;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: normal;
+  color: #B42318;
+  background: #fff;
+  border: 1px solid #F4B7B0;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.cart-promo-applied button:hover {
+  transform: none;
+  box-shadow: none;
+  background: #FFEFEC;
+}
+
+.cart-promo-msg {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.cart-promo-msg.ok {
+  color: #1E7A3C;
+}
+
+.cart-promo-msg.error {
+  color: #B42318;
+}
+
+/* ===== empty cart ===== */
+.cart-empty {
+  max-width: 460px;
+  margin: 40px auto 0;
+  padding: 50px 30px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid rgba(120, 70, 40, 0.07);
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.cart-empty-icon {
+  display: grid;
+  place-items: center;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 18px;
+  background: var(--tint);
+  border-radius: 50%;
+}
+
+.cart-empty-icon svg {
+  fill: none;
+  stroke: var(--brand);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.cart-empty h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.cart-empty p {
+  margin: 10px 0 24px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.cart-empty button {
+  padding: 13px 34px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--grad);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 14px 26px -12px rgba(255, 76, 36, 0.85);
+  transition: transform 0.25s;
+}
+
+.cart-empty button:hover {
+  transform: translateY(-2px);
+}
