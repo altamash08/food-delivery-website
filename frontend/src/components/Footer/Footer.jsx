@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="footer" id="footer">
       <div className="footer-content">
         <div className="footer-content-left">
-          <img src={assets.logos} alt="" />
+          <img src={assets.logo} alt="" />
           <p>
             QuickBite is the fast, fresh, and easy way to get your favorite
             meals delivered. From local street food to gourmet dishes, we
