@@ -64,7 +64,6 @@ import un_checked from './un_checked.png'
 
 export const assets = {
     logo,
-    logos,
     basket_icon,
     dashboard_img,
     // search_icon,
