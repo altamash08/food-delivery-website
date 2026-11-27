@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --brand: #FF4C24;
+  --brand-dark: #B32916;
+  --sun: #FFC93C;
+  --cream: #FFF8F2;
+  --ink: #1F1A17;
+  --muted: #6F6862;
+  --line: #EFE4DA;
+  --tint: #FFF1EA;
+  --grad: linear-gradient(135deg, #FF6A3D 0%, #FF4C24 45%, #D93517 100%);
+  --shadow-sm: 0 2px 12px rgba(60, 30, 10, 0.07);
+  --shadow-md: 0 18px 38px -14px rgba(60, 30, 10, 0.28);
+  --font-display: 'Playfair Display', Georgia, serif;
+  --nav-h: 68px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: var(--ink);
+  background-color: var(--cream);
+  background-image:
+    radial-gradient(700px circle at 100% 0%, #FFE9DE 0%, transparent 70%),
+    radial-gradient(600px circle at 0% 100%, #FFF3D2 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* navbar aur content ke beech ki purani line ab nahi chahiye (navbar mein shadow hai) */
+.app > hr {
+  display: none;
+}
+
+.app-content {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 76, 36, 0.45);
+  outline-offset: 2px;
+}
+
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: #E6CFC1;
+  border-radius: 10px;
+}
+
+@keyframes rise {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
